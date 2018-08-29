@@ -2,6 +2,14 @@
 
 <head>
     <title>Welcome</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
@@ -15,12 +23,17 @@
             z-index: 100;
         }
 
-        a .fab {
+        a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        a .icons {
             color: #adb5bd;
             font-size: 32px;
         }
 
-        a:hover .fab {
+        a:hover .icons {
             color: red;
             font-size: 32px;
         }
@@ -35,14 +48,19 @@
         .header h1 {
             font-weight: normal;
             letter-spacing: -1px;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .header h3 {
+            margin-top: 0;
+            padding-top: 0;
             font-weight: normal;
             letter-spacing: -1px;
             font-size: 16px;
             font-style: italic;
             color: #adb5bd;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -52,9 +70,20 @@
         <h1><strong>Kevin</strong> Burton</h1>
         <h3>Engineering Manager</h3>
         <a href="http://www.linkedin.com/in/jkevinburton
-" target="_blank"><i class="fab fa-linkedin"></i></a>
+" target="_blank" title="My LinkedIn" data-toggle="popover"
+            data-content="Who am I, where have I worked..." data-placement="top"><i class="icons fab fa-linkedin"></i></a>
+        <a href="https://github.com/jkevinburton/README" target="_blank" title="Managers README" data-toggle="popover"
+            data-content="Get to know me, how I manage and what I expect in return..." data-placement="top"><i class="icons far fa-bookmark"></i></a>
     </div>
     <img src="me.jpg" class="profile-image" />
 </body>
+
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover({
+            trigger: 'hover'
+        })
+    })
+</script>
 
 </html>
